@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',include('photo.urls',namespace='photo')),
     url(r'^photo/', include('photo.urls')),
-    url(r'accounts/', include('accounts.urls')),
+    url(r'^accounts/', include('accounts.urls')),
 
 ]
 

@@ -7,7 +7,9 @@ from django.views.generic import DetailView
 from .models import Photo
 urlpatterns = [
     url(r'^$', views.post_list, name='post_list'),
-    url(r'^single/(?P<pk>\d+/$', DetailView.as_view(model=Photo, template_name='photo/detail.html'), name='post_detail'),
+    url(r'^single/(?P<pk>\d+)/$', DetailView.as_view(model=Photo, template_name='photo/detail.html'), name='post_detail'),
+    url(r'^delete/(?P<pk>\d+)/$', views.PhotoDeleteV.as_view(), name='post_delete'),
+    url(r'^upload/$', views.UploadView.as_view(), name='post_create'),
     #localhost:8000/photo/single/123/
 
 

@@ -5,4 +5,25 @@
 {% endblock %}
 
 {% block content %}
+    <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 panel panel-default">
+                <p><img src="{{object.photo.url}}" style="width:100%;"></p>
+                <button type="button" class="btn btn-xs btn-info">
+                    {{object.author.username}}</button>
+                <p>{{object.text|linebreaksbr}}</p>
+                <a href="{% url 'post_delete' object.id %}" class="btn btn-xs btn-info">
+                    Delete</a>
+            </div>
+            <div class="col-md-2"></div>
+    </div>
+
+    <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 panel panel-default">
+                {% load disqus_tags %}
+                {% disqus_show_comments %}
+            </div>
+            <div class="col-md-2"></div>
+    </div>
 {% endblock %}
